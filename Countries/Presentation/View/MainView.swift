@@ -21,6 +21,11 @@ struct MainView: View {
                     Image(systemName: "heart.fill")
                     Text("Favorites")
             }
+        }.onAppear(){
+            #if DEBUG
+            // Prints path to app directory, we can also check the local DB there
+            print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+            #endif
         }
     }
 }

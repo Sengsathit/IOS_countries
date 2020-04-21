@@ -15,25 +15,27 @@ struct CountriesView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // Hack for ScrollView to be updated after fetching data :-(
-                if !self.countriesViewModel.countries.isEmpty {
-                    
-                    ScrollView {
-                        
-                        ForEach(countriesViewModel.countries){ country in
-                            NavigationLink(destination: CountryDetailsView(country: country), label: {
-                                ItemCountryView(country: country)
-                            })
-                        }
-                        
-                    }
+                
+                if countriesViewModel.isLoading {
+                    Text("Loading...")
                 } else {
-                    Text("Please reload data")
+                    if !self.countriesViewModel.countries.isEmpty {
+                        List {
+                            ForEach(countriesViewModel.countries){ country in
+                                NavigationLink(destination: DetailsView(country: country), label: {
+                                    ItemCountry(country: country)
+                                })
+                            }
+                        }
+                    } else {
+                        Text(countriesViewModel.message).multilineTextAlignment(.center)
+                    }
                 }
+                
             }
             .navigationBarTitle("Countries")
             .navigationBarItems(trailing: Button(action: {
-                self.countriesViewModel.fetchCountries()
+                self.countriesViewModel.loadCountries()
             }, label: {
                 Text("Reload data")
             }))
