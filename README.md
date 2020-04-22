@@ -1,8 +1,8 @@
-Having fun with following stack :
-
-SwiftUI
-Combine + Core Data
-Combine + Networking
-Repository Pattern
-
-To be continued...
+Having fun with following stack :<br/>
+<br/>
+SwiftUI<br/>
+Combine + Core Data<br/>
+Combine + Networking<br/>
+Repository Pattern<br/>
+<br/>
+To be continued...<br/>
