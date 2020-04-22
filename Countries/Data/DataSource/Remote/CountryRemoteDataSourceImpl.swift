@@ -9,23 +9,20 @@
 import Foundation
 import Combine
 
-class CountryRemoteDataSourceImpl: CountryDataSource {
+class CountryRemoteDataSourceImpl: CountryRemoteDataSource {
     
     let countriesJsonUrl =  "https://raw.githubusercontent.com/Sengsathit/DataMock/master/countries/countries.json"
     
     public init(){}
-        
+    
     public func getAllCountries() -> AnyPublisher<[Country], Error> {
         let url = URL(string: countriesJsonUrl)!
         return URLSession.shared.dataTaskPublisher(for: url)
             .map{$0.data}
-            .decode(type: [Country].self, decoder: JSONDecoder())
+            .decode(type: [CountryResponse].self, decoder: JSONDecoder())
+            .map{ countryResponse -> [Country] in return countryResponse.map{$0.mapToCountry()} }
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
-    }
-    
-    func fetchFavorites() -> AnyPublisher<[CountryEntity], Error> {
-        <#code#>
     }
     
 }

@@ -16,24 +16,28 @@ struct FavoritesView: View {
     var body: some View {
         NavigationView {
             VStack {
-//                DataFilteredList(filterKey: "name", filterValue: nameFilter){ (country: CountryEntity) in
-//                    Text(country.name!)
-//                }
-                if !self.countriesViewModel.favorites.isEmpty {
-                    List {
-                        ForEach(countriesViewModel.favorites, id: \.id){ countryEntity in
-                            NavigationLink(destination: DetailsView(country: countryEntity.mapToCountry()), label: {
-                                ItemCountry(country: countryEntity.mapToCountry())
-                            })
-                        }.onDelete(perform: countriesViewModel.deleteFavorites)
-                    }
-                    
+                if countriesViewModel.isFavoritesLoading {
+                    Loader()
                 } else {
-                    Text("No favorites")
+                    if !self.countriesViewModel.favorites.isEmpty {
+                        List {
+                            ForEach(countriesViewModel.favorites, id: \.id){ country in
+                                NavigationLink(destination: DetailsView(country: country), label: {
+                                    ItemCountry(country: country)
+                                })
+                            }.onDelete(perform: countriesViewModel.deleteFavorites)
+                        }
+                        
+                    } else {
+                        Text("No favorites")
+                    }
                 }
-            }.navigationBarTitle("Favorites")
+                
+            }
+            .navigationBarTitle("Favorites")
             .navigationBarItems(trailing: EditButton())
-        }.onAppear() {
+        }
+        .onAppear() {
             self.countriesViewModel.loadFavorites()
         }
     }

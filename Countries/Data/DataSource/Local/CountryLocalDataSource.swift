@@ -10,6 +10,7 @@ import Foundation
 import Combine
 
 protocol CountryLocalDataSource {
-    func getAllCountries() -> AnyPublisher<[Country], Error>
-    func fetchFavorites() -> AnyPublisher<[CountryEntity], Error>
+    func fetchFavorites() -> AnyPublisher<[Country], Error>
+    func insertCountry(country: Country) -> AnyPublisher<Bool, Error>
+    func deleteCountry(country: Country) -> AnyPublisher<Bool, Error>
 }

@@ -8,14 +8,10 @@
 
 import Foundation
 
-struct Country: Identifiable, Codable {
+struct Country: Identifiable {
     let id = UUID()
     let code: String
     let name: String
     let capital: String
     let flag: String
-
-    private enum CodingKeys : String, CodingKey {
-        case id, code = "alpha3Code", name, capital, flag = "flagPNG"
-    }
 }

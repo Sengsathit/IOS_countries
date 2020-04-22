@@ -6,77 +6,75 @@
 //  Copyright © 2020 Sengsathit. All rights reserved.
 //
 
-import Foundation
 import SwiftUI
-import CoreData
 import Combine
 
 class CountriesViewModel: ObservableObject {
     
     @Published var countries: [Country] = []
-    @Published var favorites: [CountryEntity] = []
-    @Published var isLoading: Bool = false
+    @Published var favorites: [Country] = []
+    @Published var isCountriesLoading: Bool = false
+    @Published var isFavoritesLoading: Bool = false
     @Published var message: String = "Please reload data"
     
-    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    let countryUseCase = GetCountriesUseCase()
+    let getCoutriesUseCase = GetCountriesUseCase()
+    let getFavoritesUseCase = GetFavoritesUseCase()
+    let addToFavoritesUseCase = AddToFavoritesUseCase()
+    let removeFromFavoritesUseCase = RemoveFromFavoritesUseCase()
     
     // Cancellable storage for countries Publisher
     private var countriesSubscriber: AnyCancellable?
+    private var favoritesSubscriber: AnyCancellable?
     
     func loadCountries() {
-        isLoading = true
-        countriesSubscriber = countryUseCase.publisher.sink(receiveCompletion: { completion in
-            
-            switch completion {
-            case .finished:
-                break
-            case .failure:
-                self.message = "Something went wrong\nPlease try again"
-                break
-            }
-            self.isLoading = false
-            
-        }, receiveValue: { countries in
-            self.countries = countries
-        })
-    }
-    
-    func addCountryToFavorites(country: Country) {
-        let countryEntity = CountryEntity(context: managedObjectContext)
-        countryEntity.id = UUID()
-        countryEntity.code = country.code
-        countryEntity.name = country.name
-        countryEntity.capital = country.capital
-        countryEntity.flag = country.flag
-        commitContext()
+        isCountriesLoading = true
+        countriesSubscriber = getCoutriesUseCase.publisher
+            .delay(for: .seconds(2), scheduler: DispatchQueue.main) //TODO : remove delay, it's just for simulate latency
+            .sink(receiveCompletion: { completion in
+                
+                switch completion {
+                case .finished:
+                    break
+                case .failure:
+                    self.message = "Something went wrong\nPlease try again"
+                    break
+                }
+                self.isCountriesLoading = false
+                
+            }, receiveValue: { countries in
+                self.countries = countries
+            })
     }
     
     func loadFavorites() {
-        let request : NSFetchRequest<CountryEntity> = CountryEntity.fetchRequest()
-        do{
-            favorites = try managedObjectContext.fetch(request)
-        } catch {
-            print("Error while fetching data from context : \(error)")
-        }
-        
+        isFavoritesLoading = true
+        favoritesSubscriber = getFavoritesUseCase.publisher
+            .sink(receiveCompletion: { completion in
+                self.isFavoritesLoading = false
+                
+            }, receiveValue: { countries in
+                self.favorites = countries
+            })
     }
     
+    func addCountryToFavorites(country: Country) {
+        favoritesSubscriber = addToFavoritesUseCase.getPublisher(country: country).sink(receiveCompletion: { _ in
+            
+        }, receiveValue: { _ in
+            
+        })
+    }
+    
+    // TODO delete is OK but must be improved
     func deleteFavorites(at offsets: IndexSet) {
         for index in offsets {
             let country = favorites[index]
-            managedObjectContext.delete(country)
-            commitContext()
-            loadFavorites()
-        }
-    }
-    
-    private func commitContext() {
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print("Error : \(error)")
+            favoritesSubscriber = removeFromFavoritesUseCase.getPublisher(country: country)
+                .sink(receiveCompletion: { _ in
+                    
+                }, receiveValue: { _ in
+                    self.loadFavorites()
+                })
         }
     }
     

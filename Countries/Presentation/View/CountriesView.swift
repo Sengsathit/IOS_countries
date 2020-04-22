@@ -16,8 +16,8 @@ struct CountriesView: View {
         NavigationView {
             VStack {
                 
-                if countriesViewModel.isLoading {
-                    Text("Loading...")
+                if countriesViewModel.isCountriesLoading {
+                    Loader()
                 } else {
                     if !self.countriesViewModel.countries.isEmpty {
                         List {

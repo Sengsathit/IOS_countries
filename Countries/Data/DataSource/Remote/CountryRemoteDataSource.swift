@@ -9,7 +9,6 @@
 import Foundation
 import Combine
 
-protocol CountryLocalDataSource {
+protocol CountryRemoteDataSource {
     func getAllCountries() -> AnyPublisher<[Country], Error>
-    func fetchFavorites() -> AnyPublisher<[CountryEntity], Error>
 }

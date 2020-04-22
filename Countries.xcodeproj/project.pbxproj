@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,9 @@
 		1242B788244CD64C00FF7FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1242B787244CD64C00FF7FE2 /* Assets.xcassets */; };
 		1242B78B244CD64C00FF7FE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1242B78A244CD64C00FF7FE2 /* Preview Assets.xcassets */; };
 		1242B78E244CD64C00FF7FE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1242B78C244CD64C00FF7FE2 /* LaunchScreen.storyboard */; };
+		124665E22450DEAC00335CFC /* GetFavoritesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124665E12450DEAC00335CFC /* GetFavoritesUseCase.swift */; };
+		124665E42450E44200335CFC /* AddToFavoritesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124665E32450E44200335CFC /* AddToFavoritesUseCase.swift */; };
+		124665E62450E85A00335CFC /* RemoveFromFavoritesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124665E52450E85A00335CFC /* RemoveFromFavoritesUseCase.swift */; };
 		1272B5E3244CE001005088EF /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1272B5E2244CE001005088EF /* DetailsView.swift */; };
 		1272B5E5244CE06C005088EF /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1272B5E4244CE06C005088EF /* FavoritesView.swift */; };
 		1272B5E7244CE16E005088EF /* CountriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1272B5E6244CE16E005088EF /* CountriesView.swift */; };
@@ -27,8 +30,16 @@
 		12D2DA4A244F6E640075F077 /* CountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2DA49244F6E640075F077 /* CountryRepository.swift */; };
 		12D2DA4E244F6F000075F077 /* CountryRepositorympl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2DA4D244F6F000075F077 /* CountryRepositorympl.swift */; };
 		12D2DA50244F6F930075F077 /* GetCountriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2DA4F244F6F930075F077 /* GetCountriesUseCase.swift */; };
-		12D2DA52244F72810075F077 /* CountryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2DA51244F72810075F077 /* CountryDataSource.swift */; };
-		12D2DA54244F73840075F077 /* CountryRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2DA53244F73840075F077 /* CountryRemoteDataSource.swift */; };
+		12D2DA52244F72810075F077 /* CountryLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2DA51244F72810075F077 /* CountryLocalDataSource.swift */; };
+		12D2DA54244F73840075F077 /* CountryRemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2DA53244F73840075F077 /* CountryRemoteDataSourceImpl.swift */; };
+		12EDC8912450502E0032F84E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 12EDC8902450502E0032F84E /* Lottie */; };
+		12EDC894245051570032F84E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC893245051570032F84E /* LottieView.swift */; };
+		12EDC8A32450640A0032F84E /* LottieLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC8A22450640A0032F84E /* LottieLoaderView.swift */; };
+		12EDC8A5245064900032F84E /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC8A4245064900032F84E /* Loader.swift */; };
+		12EDC8AB24507E5C0032F84E /* Animations in Resources */ = {isa = PBXBuildFile; fileRef = 12EDC8AA24507E5C0032F84E /* Animations */; };
+		12EDC8AD245090230032F84E /* CountryLocalDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC8AC245090230032F84E /* CountryLocalDataSourceImpl.swift */; };
+		12EDC8B12450913F0032F84E /* CountryRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC8B02450913F0032F84E /* CountryRemoteDataSource.swift */; };
+		12EDC8B42450D24C0032F84E /* CountryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC8B32450D24C0032F84E /* CountryResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +56,9 @@
 		1242B78A244CD64C00FF7FE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1242B78D244CD64C00FF7FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1242B78F244CD64C00FF7FE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		124665E12450DEAC00335CFC /* GetFavoritesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavoritesUseCase.swift; sourceTree = "<group>"; };
+		124665E32450E44200335CFC /* AddToFavoritesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToFavoritesUseCase.swift; sourceTree = "<group>"; };
+		124665E52450E85A00335CFC /* RemoveFromFavoritesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFromFavoritesUseCase.swift; sourceTree = "<group>"; };
 		1272B5E2244CE001005088EF /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		1272B5E4244CE06C005088EF /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		1272B5E6244CE16E005088EF /* CountriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesView.swift; sourceTree = "<group>"; };
@@ -54,8 +68,15 @@
 		12D2DA49244F6E640075F077 /* CountryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepository.swift; sourceTree = "<group>"; };
 		12D2DA4D244F6F000075F077 /* CountryRepositorympl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepositorympl.swift; sourceTree = "<group>"; };
 		12D2DA4F244F6F930075F077 /* GetCountriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesUseCase.swift; sourceTree = "<group>"; };
-		12D2DA51244F72810075F077 /* CountryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataSource.swift; sourceTree = "<group>"; };
-		12D2DA53244F73840075F077 /* CountryRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRemoteDataSource.swift; sourceTree = "<group>"; };
+		12D2DA51244F72810075F077 /* CountryLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryLocalDataSource.swift; sourceTree = "<group>"; };
+		12D2DA53244F73840075F077 /* CountryRemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRemoteDataSourceImpl.swift; sourceTree = "<group>"; };
+		12EDC893245051570032F84E /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		12EDC8A22450640A0032F84E /* LottieLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieLoaderView.swift; sourceTree = "<group>"; };
+		12EDC8A4245064900032F84E /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		12EDC8AA24507E5C0032F84E /* Animations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Animations; path = "../../../../../lottie-ios/Example/lottie-swift/Animations"; sourceTree = "<group>"; };
+		12EDC8AC245090230032F84E /* CountryLocalDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryLocalDataSourceImpl.swift; sourceTree = "<group>"; };
+		12EDC8B02450913F0032F84E /* CountryRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRemoteDataSource.swift; sourceTree = "<group>"; };
+		12EDC8B32450D24C0032F84E /* CountryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12EDC8912450502E0032F84E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,8 +124,6 @@
 			children = (
 				12D2DA4C244F6EC40075F077 /* DataSource */,
 				12D2DA4B244F6EBA0075F077 /* Repository */,
-				12286B14244EF44700833CFE /* Entity */,
-				1242B782244CD64B00FF7FE2 /* Countries.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -151,7 +171,8 @@
 		1272B5DF244CDFA0005088EF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1272B5F0244CEF54005088EF /* custom */,
+				12EDC892245051380032F84E /* Lottie */,
+				1272B5F0244CEF54005088EF /* Custom */,
 				1242B785244CD64B00FF7FE2 /* MainView.swift */,
 				1272B5E6244CE16E005088EF /* CountriesView.swift */,
 				1272B5E2244CE001005088EF /* DetailsView.swift */,
@@ -176,19 +197,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		1272B5F0244CEF54005088EF /* custom */ = {
+		1272B5F0244CEF54005088EF /* Custom */ = {
 			isa = PBXGroup;
 			children = (
 				1272B5EE244CEF4E005088EF /* ItemCountry.swift */,
 				12286B0C244EE77000833CFE /* DataFilteredList.swift */,
 				12286B12244EF2F800833CFE /* UrlImage.swift */,
+				12EDC8A4245064900032F84E /* Loader.swift */,
 			);
-			path = custom;
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		12D2DA47244F6DEC0075F077 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				124665E12450DEAC00335CFC /* GetFavoritesUseCase.swift */,
+				124665E52450E85A00335CFC /* RemoveFromFavoritesUseCase.swift */,
+				124665E32450E44200335CFC /* AddToFavoritesUseCase.swift */,
 				12D2DA4F244F6F930075F077 /* GetCountriesUseCase.swift */,
 			);
 			path = UseCase;
@@ -213,10 +238,57 @@
 		12D2DA4C244F6EC40075F077 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				12D2DA51244F72810075F077 /* CountryDataSource.swift */,
-				12D2DA53244F73840075F077 /* CountryRemoteDataSource.swift */,
+				12EDC8AF2450912E0032F84E /* Remote */,
+				12EDC8AE245091260032F84E /* Local */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		12EDC892245051380032F84E /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				12EDC8AA24507E5C0032F84E /* Animations */,
+				12EDC8A22450640A0032F84E /* LottieLoaderView.swift */,
+				12EDC893245051570032F84E /* LottieView.swift */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		12EDC8AE245091260032F84E /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				12EDC8B52450D7A10032F84E /* Database */,
+				12D2DA51244F72810075F077 /* CountryLocalDataSource.swift */,
+				12EDC8AC245090230032F84E /* CountryLocalDataSourceImpl.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		12EDC8AF2450912E0032F84E /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				12EDC8B22450D21E0032F84E /* Model */,
+				12EDC8B02450913F0032F84E /* CountryRemoteDataSource.swift */,
+				12D2DA53244F73840075F077 /* CountryRemoteDataSourceImpl.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		12EDC8B22450D21E0032F84E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12EDC8B32450D24C0032F84E /* CountryResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12EDC8B52450D7A10032F84E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				12286B14244EF44700833CFE /* Entity */,
+				1242B782244CD64B00FF7FE2 /* Countries.xcdatamodeld */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +307,9 @@
 			dependencies = (
 			);
 			name = Countries;
+			packageProductDependencies = (
+				12EDC8902450502E0032F84E /* Lottie */,
+			);
 			productName = Countries;
 			productReference = 1242B77B244CD64B00FF7FE2 /* Countries.app */;
 			productType = "com.apple.product-type.application";
@@ -263,6 +338,9 @@
 				Base,
 			);
 			mainGroup = 1242B772244CD64B00FF7FE2;
+			packageReferences = (
+				12EDC88F2450502E0032F84E /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 1242B77C244CD64B00FF7FE2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -277,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12EDC8AB24507E5C0032F84E /* Animations in Resources */,
 				1242B78E244CD64C00FF7FE2 /* LaunchScreen.storyboard in Resources */,
 				1242B78B244CD64C00FF7FE2 /* Preview Assets.xcassets in Resources */,
 				1242B788244CD64C00FF7FE2 /* Assets.xcassets in Resources */,
@@ -290,16 +369,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				124665E62450E85A00335CFC /* RemoveFromFavoritesUseCase.swift in Sources */,
 				1272B5E3244CE001005088EF /* DetailsView.swift in Sources */,
-				12D2DA54244F73840075F077 /* CountryRemoteDataSource.swift in Sources */,
+				12EDC8B12450913F0032F84E /* CountryRemoteDataSource.swift in Sources */,
+				12EDC8A32450640A0032F84E /* LottieLoaderView.swift in Sources */,
+				12D2DA54244F73840075F077 /* CountryRemoteDataSourceImpl.swift in Sources */,
+				124665E42450E44200335CFC /* AddToFavoritesUseCase.swift in Sources */,
 				1272B5ED244CE923005088EF /* Country.swift in Sources */,
 				12D2DA4E244F6F000075F077 /* CountryRepositorympl.swift in Sources */,
 				1242B77F244CD64B00FF7FE2 /* AppDelegate.swift in Sources */,
 				12286B11244EE96200833CFE /* CountryEntity+CoreDataProperties.swift in Sources */,
 				12286B10244EE96200833CFE /* CountryEntity+CoreDataClass.swift in Sources */,
+				12EDC8AD245090230032F84E /* CountryLocalDataSourceImpl.swift in Sources */,
+				12EDC8A5245064900032F84E /* Loader.swift in Sources */,
+				12EDC894245051570032F84E /* LottieView.swift in Sources */,
 				1242B784244CD64B00FF7FE2 /* Countries.xcdatamodeld in Sources */,
 				12286B13244EF2F800833CFE /* UrlImage.swift in Sources */,
 				1272B5EA244CE5E6005088EF /* CountriesViewModel.swift in Sources */,
+				124665E22450DEAC00335CFC /* GetFavoritesUseCase.swift in Sources */,
 				1272B5E5244CE06C005088EF /* FavoritesView.swift in Sources */,
 				12D2DA50244F6F930075F077 /* GetCountriesUseCase.swift in Sources */,
 				12286B0D244EE77000833CFE /* DataFilteredList.swift in Sources */,
@@ -308,7 +395,8 @@
 				1272B5E7244CE16E005088EF /* CountriesView.swift in Sources */,
 				1242B786244CD64B00FF7FE2 /* MainView.swift in Sources */,
 				1242B781244CD64B00FF7FE2 /* SceneDelegate.swift in Sources */,
-				12D2DA52244F72810075F077 /* CountryDataSource.swift in Sources */,
+				12EDC8B42450D24C0032F84E /* CountryResponse.swift in Sources */,
+				12D2DA52244F72810075F077 /* CountryLocalDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +590,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		12EDC88F2450502E0032F84E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		12EDC8902450502E0032F84E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12EDC88F2450502E0032F84E /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1242B782244CD64B00FF7FE2 /* Countries.xcdatamodeld */ = {
