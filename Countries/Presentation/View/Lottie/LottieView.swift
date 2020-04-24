@@ -18,7 +18,7 @@ struct LottieView: UIViewRepresentable {
         
         let view = UIView()
         
-        animationView.animation = Animation.named(fileName, subdirectory: "Animations")
+        animationView.animation = Animation.named(fileName)
         animationView.contentMode = .scaleAspectFit
         animationView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(animationView)
