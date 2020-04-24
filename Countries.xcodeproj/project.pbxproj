@@ -32,6 +32,8 @@
 		12D2DA50244F6F930075F077 /* GetCountriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2DA4F244F6F930075F077 /* GetCountriesUseCase.swift */; };
 		12D2DA52244F72810075F077 /* CountryLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2DA51244F72810075F077 /* CountryLocalDataSource.swift */; };
 		12D2DA54244F73840075F077 /* CountryRemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2DA53244F73840075F077 /* CountryRemoteDataSourceImpl.swift */; };
+		12E9D03F24535D4A008F230A /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E9D03E24535D4A008F230A /* FavoritesViewModel.swift */; };
+		12E9D0412453602E008F230A /* GetCountryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E9D0402453602E008F230A /* GetCountryUseCase.swift */; };
 		12EDC8912450502E0032F84E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 12EDC8902450502E0032F84E /* Lottie */; };
 		12EDC894245051570032F84E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC893245051570032F84E /* LottieView.swift */; };
 		12EDC8A32450640A0032F84E /* LottieLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC8A22450640A0032F84E /* LottieLoaderView.swift */; };
@@ -70,6 +72,8 @@
 		12D2DA4F244F6F930075F077 /* GetCountriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesUseCase.swift; sourceTree = "<group>"; };
 		12D2DA51244F72810075F077 /* CountryLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryLocalDataSource.swift; sourceTree = "<group>"; };
 		12D2DA53244F73840075F077 /* CountryRemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRemoteDataSourceImpl.swift; sourceTree = "<group>"; };
+		12E9D03E24535D4A008F230A /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		12E9D0402453602E008F230A /* GetCountryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountryUseCase.swift; sourceTree = "<group>"; };
 		12EDC893245051570032F84E /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		12EDC8A22450640A0032F84E /* LottieLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieLoaderView.swift; sourceTree = "<group>"; };
 		12EDC8A4245064900032F84E /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				1272B5E9244CE5E6005088EF /* CountriesViewModel.swift */,
+				12E9D03E24535D4A008F230A /* FavoritesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 				124665E52450E85A00335CFC /* RemoveFromFavoritesUseCase.swift */,
 				124665E32450E44200335CFC /* AddToFavoritesUseCase.swift */,
 				12D2DA4F244F6F930075F077 /* GetCountriesUseCase.swift */,
+				12E9D0402453602E008F230A /* GetCountryUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12E9D03F24535D4A008F230A /* FavoritesViewModel.swift in Sources */,
 				124665E62450E85A00335CFC /* RemoveFromFavoritesUseCase.swift in Sources */,
 				1272B5E3244CE001005088EF /* DetailsView.swift in Sources */,
 				12EDC8B12450913F0032F84E /* CountryRemoteDataSource.swift in Sources */,
@@ -391,6 +398,7 @@
 				12D2DA50244F6F930075F077 /* GetCountriesUseCase.swift in Sources */,
 				12286B0D244EE77000833CFE /* DataFilteredList.swift in Sources */,
 				12D2DA4A244F6E640075F077 /* CountryRepository.swift in Sources */,
+				12E9D0412453602E008F230A /* GetCountryUseCase.swift in Sources */,
 				1272B5EF244CEF4E005088EF /* ItemCountry.swift in Sources */,
 				1272B5E7244CE16E005088EF /* CountriesView.swift in Sources */,
 				1242B786244CD64B00FF7FE2 /* MainView.swift in Sources */,

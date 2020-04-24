@@ -10,6 +10,7 @@ import Foundation
 import Combine
 
 protocol CountryRepository {
+    func getCountry(countryCode: String) -> AnyPublisher<Country?, Error>
     func getCountries() -> AnyPublisher<[Country], Error>
     func getFavorites() -> AnyPublisher<[Country], Error>
     func addToFavorites(country: Country) -> AnyPublisher<Bool, Error>

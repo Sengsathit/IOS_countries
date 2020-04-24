@@ -11,6 +11,7 @@ import Combine
 
 protocol CountryLocalDataSource {
     func fetchFavorites() -> AnyPublisher<[Country], Error>
+    func getCountry(countryCode: String) -> AnyPublisher<Country?, Error>
     func insertCountry(country: Country) -> AnyPublisher<Bool, Error>
     func deleteCountry(country: Country) -> AnyPublisher<Bool, Error>
 }

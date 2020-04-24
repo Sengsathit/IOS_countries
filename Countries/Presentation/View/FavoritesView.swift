@@ -11,21 +11,21 @@ import CoreData
 
 struct FavoritesView: View {
     
-    @ObservedObject var countriesViewModel = CountriesViewModel()
+    @ObservedObject var favoritesViewModel = FavoritesViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
-                if countriesViewModel.isFavoritesLoading {
+                if favoritesViewModel.isFavoritesLoading {
                     Loader()
                 } else {
-                    if !self.countriesViewModel.favorites.isEmpty {
+                    if !self.favoritesViewModel.favorites.isEmpty {
                         List {
-                            ForEach(countriesViewModel.favorites, id: \.id){ country in
+                            ForEach(favoritesViewModel.favorites, id: \.id){ country in
                                 NavigationLink(destination: DetailsView(country: country), label: {
                                     ItemCountry(country: country)
                                 })
-                            }.onDelete(perform: countriesViewModel.deleteFavorites)
+                            }.onDelete(perform: favoritesViewModel.deleteFavorites)
                         }
                         
                     } else {
@@ -38,7 +38,7 @@ struct FavoritesView: View {
             .navigationBarItems(trailing: EditButton())
         }
         .onAppear() {
-            self.countriesViewModel.loadFavorites()
+            self.favoritesViewModel.loadFavorites()
         }
     }
     

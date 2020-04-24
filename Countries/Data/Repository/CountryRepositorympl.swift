@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class CountryRepositoryImpl: CountryRepository {
+class CountryRepositoryImpl: CountryRepository {    
 
     let countryRemoteDataSource: CountryRemoteDataSource
     let countryLocalDataSource: CountryLocalDataSource
@@ -19,6 +19,9 @@ class CountryRepositoryImpl: CountryRepository {
         countryLocalDataSource = CountryLocalDataSourceImpl()
     }
     
+    func getCountry(countryCode: String) -> AnyPublisher<Country?, Error> {
+        return countryLocalDataSource.getCountry(countryCode: countryCode)
+    }
     func getCountries() -> AnyPublisher<[Country], Error> {
         return countryRemoteDataSource.getAllCountries()
     }

@@ -12,19 +12,13 @@ import Combine
 class CountriesViewModel: ObservableObject {
     
     @Published var countries: [Country] = []
-    @Published var favorites: [Country] = []
     @Published var isCountriesLoading: Bool = false
-    @Published var isFavoritesLoading: Bool = false
     @Published var message: String = "Please reload data"
     
     let getCoutriesUseCase = GetCountriesUseCase()
-    let getFavoritesUseCase = GetFavoritesUseCase()
-    let addToFavoritesUseCase = AddToFavoritesUseCase()
-    let removeFromFavoritesUseCase = RemoveFromFavoritesUseCase()
     
     // Cancellable storage for countries Publisher
     private var countriesSubscriber: AnyCancellable?
-    private var favoritesSubscriber: AnyCancellable?
     
     func loadCountries() {
         isCountriesLoading = true
@@ -45,37 +39,5 @@ class CountriesViewModel: ObservableObject {
                 self.countries = countries
             })
     }
-    
-    func loadFavorites() {
-        isFavoritesLoading = true
-        favoritesSubscriber = getFavoritesUseCase.publisher
-            .sink(receiveCompletion: { completion in
-                self.isFavoritesLoading = false
-                
-            }, receiveValue: { countries in
-                self.favorites = countries
-            })
-    }
-    
-    func addCountryToFavorites(country: Country) {
-        favoritesSubscriber = addToFavoritesUseCase.getPublisher(country: country).sink(receiveCompletion: { _ in
-            
-        }, receiveValue: { _ in
-            
-        })
-    }
-    
-    // TODO delete is OK but must be improved
-    func deleteFavorites(at offsets: IndexSet) {
-        for index in offsets {
-            let country = favorites[index]
-            favoritesSubscriber = removeFromFavoritesUseCase.getPublisher(country: country)
-                .sink(receiveCompletion: { _ in
-                    
-                }, receiveValue: { _ in
-                    self.loadFavorites()
-                })
-        }
-    }
-    
+
 }

@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct DetailsView: View {
-        
-    @ObservedObject var countriesViewModel = CountriesViewModel()
+    
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var favoritesViewModel = FavoritesViewModel()
     
     let country: Country
     
@@ -20,14 +21,22 @@ struct DetailsView: View {
             Text(country.name).font(.headline)
             Text(country.capital)
             Spacer()
-            Button(action: {
-                self.countriesViewModel.addCountryToFavorites(country: self.country)
-            }, label: {
-                Text("ADD TO FAVORITES").foregroundColor(.white)
-            }).padding().background(Color.gray).cornerRadius(8)
-            Spacer().frame(height:48)
             
-        }.navigationBarTitle(country.name)
+            if !favoritesViewModel.isCountryInFavorites {
+                Button(action: {
+                    self.favoritesViewModel.addCountryToFavorites(country: self.country)
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Text("ADD TO FAVORITES").foregroundColor(.white)
+                }).padding().background(Color.gray).cornerRadius(8)
+                Spacer().frame(height:48)
+            }
+            
+        }
+        .navigationBarTitle(country.name)
+        .onAppear(){
+            self.favoritesViewModel.getCountry(code: self.country.code)
+        }
     }
     
     
