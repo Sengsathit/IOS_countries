@@ -6,7 +6,8 @@ Having fun on iOS development by using the following stack :<br/>
 
 * SwiftUI
 * MVVM
-* Clean architecture 
+* Clean architecture
+* Dependency Injection with Resolver framework
 * Combine + Core Data
 * Combine + Networking
 
