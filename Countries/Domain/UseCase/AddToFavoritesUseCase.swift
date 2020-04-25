@@ -8,13 +8,10 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class AddToFavoritesUseCase {
-    let countryRepository: CountryRepository
-    
-    init() {
-        countryRepository = CountryRepositoryImpl()
-    }
+    @Injected var countryRepository: CountryRepository
     
     func getPublisher(country: Country) -> AnyPublisher<Bool, CountryError> {
         return countryRepository.addToFavorites(country: country)

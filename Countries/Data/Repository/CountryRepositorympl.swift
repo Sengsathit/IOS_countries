@@ -8,16 +8,12 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class CountryRepositoryImpl: CountryRepository {    
     
-    let countryRemoteDataSource: CountryRemoteDataSource
-    let countryLocalDataSource: CountryLocalDataSource
-    
-    init() {
-        countryRemoteDataSource = CountryRemoteDataSourceImpl()
-        countryLocalDataSource = CountryLocalDataSourceImpl()
-    }
+    @Injected var countryRemoteDataSource: CountryRemoteDataSource
+    @Injected var countryLocalDataSource: CountryLocalDataSource
     
     func getCountry(countryCode: String) -> AnyPublisher<Country?, CountryError> {
         

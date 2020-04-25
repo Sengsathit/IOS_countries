@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import Resolver
 
 class CountriesViewModel: ObservableObject {
     
@@ -15,7 +16,7 @@ class CountriesViewModel: ObservableObject {
     @Published var isCountriesLoading: Bool = false
     @Published var message: String = "Please reload data"
     
-    let getCoutriesUseCase = GetCountriesUseCase()
+    @Injected var getCoutriesUseCase: GetCountriesUseCase
     
     // Cancellable storage for countries Publisher
     private var countriesSubscriber: AnyCancellable?

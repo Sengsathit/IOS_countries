@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class FavoritesViewModel: ObservableObject {
     
@@ -15,10 +16,10 @@ class FavoritesViewModel: ObservableObject {
     @Published var isCountryInFavorites: Bool = false
     @Published var isFavoritesLoading: Bool = false
 
-    let getCountryUseCase = GetCountryUseCase()
-    let getFavoritesUseCase = GetFavoritesUseCase()
-    let addToFavoritesUseCase = AddToFavoritesUseCase()
-    let removeFromFavoritesUseCase = RemoveFromFavoritesUseCase()
+    @Injected var getCountryUseCase: GetCountryUseCase
+    @Injected var getFavoritesUseCase: GetFavoritesUseCase
+    @Injected var addToFavoritesUseCase: AddToFavoritesUseCase
+    @Injected var removeFromFavoritesUseCase: RemoveFromFavoritesUseCase
     
     private var favoritesSubscriber: AnyCancellable?
     

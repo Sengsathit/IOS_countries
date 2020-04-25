@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct CountriesView: View {
     

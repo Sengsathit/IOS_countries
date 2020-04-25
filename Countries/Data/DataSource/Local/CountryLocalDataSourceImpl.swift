@@ -13,9 +13,7 @@ import CoreData
 class CountryLocalDataSourceImpl: CountryLocalDataSource {
     
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    public init(){}
-    
+        
     func getCountry(countryCode: String) throws -> CountryEntity? {
         let fetchRequest : NSFetchRequest<CountryEntity> = CountryEntity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "code = %@", countryCode)

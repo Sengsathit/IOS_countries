@@ -8,13 +8,10 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class GetCountryUseCase {
-    let countryRepository: CountryRepository
-    
-    init() {
-        countryRepository = CountryRepositoryImpl()
-    }
+    @Injected var countryRepository: CountryRepository
     
     func getPublisher(countryCode: String) -> AnyPublisher<Country?, CountryError> {
         return countryRepository.getCountry(countryCode: countryCode)

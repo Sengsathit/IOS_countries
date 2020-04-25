@@ -28,6 +28,11 @@
 		1272B5EA244CE5E6005088EF /* CountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1272B5E9244CE5E6005088EF /* CountriesViewModel.swift */; };
 		1272B5ED244CE923005088EF /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1272B5EC244CE923005088EF /* Country.swift */; };
 		1272B5EF244CEF4E005088EF /* ItemCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1272B5EE244CEF4E005088EF /* ItemCountry.swift */; };
+		12CD89672454C256005DB73D /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 12CD89662454C256005DB73D /* Resolver */; };
+		12CD89692454C33F005DB73D /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD89682454C33F005DB73D /* AppDelegate+Injection.swift */; };
+		12CD896B2454C423005DB73D /* DataSource+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD896A2454C423005DB73D /* DataSource+Injection.swift */; };
+		12CD896D2454C649005DB73D /* Repository+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD896C2454C649005DB73D /* Repository+Injection.swift */; };
+		12CD896F2454C860005DB73D /* UseCase+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD896E2454C860005DB73D /* UseCase+Injection.swift */; };
 		12D2DA4A244F6E640075F077 /* CountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2DA49244F6E640075F077 /* CountryRepository.swift */; };
 		12D2DA4E244F6F000075F077 /* CountryRepositorympl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2DA4D244F6F000075F077 /* CountryRepositorympl.swift */; };
 		12D2DA50244F6F930075F077 /* GetCountriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2DA4F244F6F930075F077 /* GetCountriesUseCase.swift */; };
@@ -69,6 +74,10 @@
 		1272B5E9244CE5E6005088EF /* CountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModel.swift; sourceTree = "<group>"; };
 		1272B5EC244CE923005088EF /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		1272B5EE244CEF4E005088EF /* ItemCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCountry.swift; sourceTree = "<group>"; };
+		12CD89682454C33F005DB73D /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
+		12CD896A2454C423005DB73D /* DataSource+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataSource+Injection.swift"; sourceTree = "<group>"; };
+		12CD896C2454C649005DB73D /* Repository+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+Injection.swift"; sourceTree = "<group>"; };
+		12CD896E2454C860005DB73D /* UseCase+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UseCase+Injection.swift"; sourceTree = "<group>"; };
 		12D2DA49244F6E640075F077 /* CountryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepository.swift; sourceTree = "<group>"; };
 		12D2DA4D244F6F000075F077 /* CountryRepositorympl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepositorympl.swift; sourceTree = "<group>"; };
 		12D2DA4F244F6F930075F077 /* GetCountriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesUseCase.swift; sourceTree = "<group>"; };
@@ -90,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12CD89672454C256005DB73D /* Resolver in Frameworks */,
 				12EDC8912450502E0032F84E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +176,7 @@
 				12286B17244EF80500833CFE /* Domain */,
 				12286B19244EF82A00833CFE /* Data */,
 				1242B77E244CD64B00FF7FE2 /* AppDelegate.swift */,
+				12CD89682454C33F005DB73D /* AppDelegate+Injection.swift */,
 				1242B780244CD64B00FF7FE2 /* SceneDelegate.swift */,
 				1242B787244CD64C00FF7FE2 /* Assets.xcassets */,
 				1242B78C244CD64C00FF7FE2 /* LaunchScreen.storyboard */,
@@ -232,6 +243,7 @@
 				124665E32450E44200335CFC /* AddToFavoritesUseCase.swift */,
 				12D2DA4F244F6F930075F077 /* GetCountriesUseCase.swift */,
 				12E9D0402453602E008F230A /* GetCountryUseCase.swift */,
+				12CD896E2454C860005DB73D /* UseCase+Injection.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -248,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				12D2DA4D244F6F000075F077 /* CountryRepositorympl.swift */,
+				12CD896C2454C649005DB73D /* Repository+Injection.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -257,6 +270,7 @@
 			children = (
 				12EDC8AF2450912E0032F84E /* Remote */,
 				12EDC8AE245091260032F84E /* Local */,
+				12CD896A2454C423005DB73D /* DataSource+Injection.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -326,6 +340,7 @@
 			name = Countries;
 			packageProductDependencies = (
 				12EDC8902450502E0032F84E /* Lottie */,
+				12CD89662454C256005DB73D /* Resolver */,
 			);
 			productName = Countries;
 			productReference = 1242B77B244CD64B00FF7FE2 /* Countries.app */;
@@ -357,6 +372,7 @@
 			mainGroup = 1242B772244CD64B00FF7FE2;
 			packageReferences = (
 				12EDC88F2450502E0032F84E /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				12CD89652454C256005DB73D /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = 1242B77C244CD64B00FF7FE2 /* Products */;
 			projectDirPath = "";
@@ -386,12 +402,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12CD89692454C33F005DB73D /* AppDelegate+Injection.swift in Sources */,
+				12CD896D2454C649005DB73D /* Repository+Injection.swift in Sources */,
 				12E9D03F24535D4A008F230A /* FavoritesViewModel.swift in Sources */,
 				124665E62450E85A00335CFC /* RemoveFromFavoritesUseCase.swift in Sources */,
 				1272B5E3244CE001005088EF /* DetailsView.swift in Sources */,
 				12EDC8B12450913F0032F84E /* CountryRemoteDataSource.swift in Sources */,
 				12EDC8A32450640A0032F84E /* LottieLoaderView.swift in Sources */,
 				12D2DA54244F73840075F077 /* CountryRemoteDataSourceImpl.swift in Sources */,
+				12CD896F2454C860005DB73D /* UseCase+Injection.swift in Sources */,
 				124665E42450E44200335CFC /* AddToFavoritesUseCase.swift in Sources */,
 				1272B5ED244CE923005088EF /* Country.swift in Sources */,
 				12D2DA4E244F6F000075F077 /* CountryRepositorympl.swift in Sources */,
@@ -411,6 +430,7 @@
 				12D2DA4A244F6E640075F077 /* CountryRepository.swift in Sources */,
 				12E9D0412453602E008F230A /* GetCountryUseCase.swift in Sources */,
 				1272B5EF244CEF4E005088EF /* ItemCountry.swift in Sources */,
+				12CD896B2454C423005DB73D /* DataSource+Injection.swift in Sources */,
 				1272B5E7244CE16E005088EF /* CountriesView.swift in Sources */,
 				1242B786244CD64B00FF7FE2 /* MainView.swift in Sources */,
 				1242B781244CD64B00FF7FE2 /* SceneDelegate.swift in Sources */,
@@ -612,6 +632,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		12CD89652454C256005DB73D /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:hmlongco/Resolver.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.2;
+			};
+		};
 		12EDC88F2450502E0032F84E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:airbnb/lottie-ios.git";
@@ -623,6 +651,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		12CD89662454C256005DB73D /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12CD89652454C256005DB73D /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
 		12EDC8902450502E0032F84E /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 12EDC88F2450502E0032F84E /* XCRemoteSwiftPackageReference "lottie-ios" */;

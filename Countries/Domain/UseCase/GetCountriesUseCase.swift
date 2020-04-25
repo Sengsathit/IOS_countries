@@ -8,13 +8,11 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class GetCountriesUseCase {
-    let countryRepository: CountryRepository
     
-    init() {
-        countryRepository = CountryRepositoryImpl()
-    }
+    @Injected var countryRepository: CountryRepository
     
     var publisher: AnyPublisher<[Country], CountryError> {
         countryRepository.getRemoteCountries()

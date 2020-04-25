@@ -8,13 +8,10 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class GetFavoritesUseCase {
-    let countryRepository: CountryRepository
-    
-    init() {
-        countryRepository = CountryRepositoryImpl()
-    }
+    @Injected var countryRepository: CountryRepository
     
     var publisher: AnyPublisher<[Country], CountryError> {
         countryRepository.getFavorites()
