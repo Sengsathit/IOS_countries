@@ -9,6 +9,7 @@
 import Foundation
 
 enum CountryError: Error {
+    case fetchCountries
     case fetchFavoritesError
     case retrieveCountry
     case insertCountry

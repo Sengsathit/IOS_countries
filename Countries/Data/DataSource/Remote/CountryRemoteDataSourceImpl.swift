@@ -15,13 +15,16 @@ class CountryRemoteDataSourceImpl: CountryRemoteDataSource {
     
     public init(){}
     
-    public func getAllCountries() -> AnyPublisher<[Country], Error> {
+    public func getAllCountries() -> AnyPublisher<[Country], CountryError> {
         let url = URL(string: countriesJsonUrl)!
         return URLSession.shared.dataTaskPublisher(for: url)
             .map{$0.data}
             .decode(type: [CountryResponse].self, decoder: JSONDecoder())
             .map{ countryResponse -> [Country] in return countryResponse.map{$0.mapToCountry()} }
             .receive(on: RunLoop.main)
+            .mapError({_ in
+                return CountryError.fetchCountries
+            })
             .eraseToAnyPublisher()
     }
     

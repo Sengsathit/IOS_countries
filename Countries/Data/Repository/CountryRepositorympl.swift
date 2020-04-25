@@ -105,7 +105,7 @@ class CountryRepositoryImpl: CountryRepository {
         }.eraseToAnyPublisher()
     }
     
-    func getRemoteCountries() -> AnyPublisher<[Country], Error> {
+    func getRemoteCountries() -> AnyPublisher<[Country], CountryError> {
         return countryRemoteDataSource.getAllCountries()
     }
 }

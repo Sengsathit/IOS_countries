@@ -10,5 +10,5 @@ import Foundation
 import Combine
 
 protocol CountryRemoteDataSource {
-    func getAllCountries() -> AnyPublisher<[Country], Error>
+    func getAllCountries() -> AnyPublisher<[Country], CountryError>
 }
