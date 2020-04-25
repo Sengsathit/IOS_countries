@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12191A4024543AA400C8C10C /* CountryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12191A3F24543AA400C8C10C /* CountryError.swift */; };
 		12286B0D244EE77000833CFE /* DataFilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12286B0C244EE77000833CFE /* DataFilteredList.swift */; };
 		12286B10244EE96200833CFE /* CountryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12286B0E244EE96200833CFE /* CountryEntity+CoreDataClass.swift */; };
 		12286B11244EE96200833CFE /* CountryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12286B0F244EE96200833CFE /* CountryEntity+CoreDataProperties.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12191A3F24543AA400C8C10C /* CountryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryError.swift; sourceTree = "<group>"; };
 		12286B0C244EE77000833CFE /* DataFilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFilteredList.swift; sourceTree = "<group>"; };
 		12286B0E244EE96200833CFE /* CountryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		12286B0F244EE96200833CFE /* CountryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12191A3E24543A6D00C8C10C /* Exception */ = {
+			isa = PBXGroup;
+			children = (
+				12191A3F24543AA400C8C10C /* CountryError.swift */,
+			);
+			path = Exception;
+			sourceTree = "<group>";
+		};
 		12286B14244EF44700833CFE /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		12286B17244EF80500833CFE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				12191A3E24543A6D00C8C10C /* Exception */,
 				12D2DA48244F6E390075F077 /* Abstraction */,
 				12D2DA47244F6DEC0075F077 /* UseCase */,
 				1272B5EB244CE910005088EF /* Model */,
@@ -403,6 +414,7 @@
 				1272B5E7244CE16E005088EF /* CountriesView.swift in Sources */,
 				1242B786244CD64B00FF7FE2 /* MainView.swift in Sources */,
 				1242B781244CD64B00FF7FE2 /* SceneDelegate.swift in Sources */,
+				12191A4024543AA400C8C10C /* CountryError.swift in Sources */,
 				12EDC8B42450D24C0032F84E /* CountryResponse.swift in Sources */,
 				12D2DA52244F72810075F077 /* CountryLocalDataSource.swift in Sources */,
 			);

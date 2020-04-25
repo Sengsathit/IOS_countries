@@ -16,7 +16,7 @@ class GetFavoritesUseCase {
         countryRepository = CountryRepositoryImpl()
     }
     
-    var publisher: AnyPublisher<[Country], Error> {
+    var publisher: AnyPublisher<[Country], CountryError> {
         countryRepository.getFavorites()
     }
 }

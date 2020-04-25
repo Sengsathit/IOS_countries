@@ -17,6 +17,6 @@ class GetCountriesUseCase {
     }
     
     var publisher: AnyPublisher<[Country], Error> {
-        countryRepository.getCountries()
+        countryRepository.getRemoteCountries()
     }
 }

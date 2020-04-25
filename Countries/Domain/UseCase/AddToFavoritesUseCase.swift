@@ -16,7 +16,7 @@ class AddToFavoritesUseCase {
         countryRepository = CountryRepositoryImpl()
     }
     
-    func getPublisher(country: Country) -> AnyPublisher<Bool, Error> {
+    func getPublisher(country: Country) -> AnyPublisher<Bool, CountryError> {
         return countryRepository.addToFavorites(country: country)
     }
 }

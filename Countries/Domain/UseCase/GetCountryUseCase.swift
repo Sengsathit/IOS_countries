@@ -16,7 +16,7 @@ class GetCountryUseCase {
         countryRepository = CountryRepositoryImpl()
     }
     
-    func getPublisher(countryCode: String) -> AnyPublisher<Country?, Error> {
+    func getPublisher(countryCode: String) -> AnyPublisher<Country?, CountryError> {
         return countryRepository.getCountry(countryCode: countryCode)
     }
 }

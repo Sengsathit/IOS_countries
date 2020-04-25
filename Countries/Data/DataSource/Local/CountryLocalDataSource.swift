@@ -10,8 +10,8 @@ import Foundation
 import Combine
 
 protocol CountryLocalDataSource {
-    func fetchFavorites() -> AnyPublisher<[Country], Error>
-    func getCountry(countryCode: String) -> AnyPublisher<Country?, Error>
-    func insertCountry(country: Country) -> AnyPublisher<Bool, Error>
-    func deleteCountry(country: Country) -> AnyPublisher<Bool, Error>
+    func fetchFavorites() throws -> [CountryEntity]
+    func getCountry(countryCode: String) throws -> CountryEntity?
+    func insertCountry(country: Country) throws
+    func deleteCountry(country: Country) throws
 }

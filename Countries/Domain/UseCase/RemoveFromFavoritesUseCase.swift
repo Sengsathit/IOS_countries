@@ -16,7 +16,7 @@ class RemoveFromFavoritesUseCase {
         countryRepository = CountryRepositoryImpl()
     }
     
-    func getPublisher(country: Country) -> AnyPublisher<Bool, Error> {
+    func getPublisher(country: Country) -> AnyPublisher<Bool, CountryError> {
         return countryRepository.removeFromFavorites(country: country)
     }
 }

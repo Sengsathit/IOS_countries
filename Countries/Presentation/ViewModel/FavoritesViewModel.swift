@@ -49,7 +49,6 @@ class FavoritesViewModel: ObservableObject {
             })
     }
     
-    // TODO delete is OK but must be improved
     func deleteFavorites(at offsets: IndexSet) {
         for index in offsets {
             let country = favorites[index]
