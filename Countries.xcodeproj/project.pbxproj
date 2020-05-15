@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		12191A4024543AA400C8C10C /* CountryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12191A3F24543AA400C8C10C /* CountryError.swift */; };
-		12286B0D244EE77000833CFE /* DataFilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12286B0C244EE77000833CFE /* DataFilteredList.swift */; };
 		12286B10244EE96200833CFE /* CountryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12286B0E244EE96200833CFE /* CountryEntity+CoreDataClass.swift */; };
 		12286B11244EE96200833CFE /* CountryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12286B0F244EE96200833CFE /* CountryEntity+CoreDataProperties.swift */; };
 		12286B13244EF2F800833CFE /* UrlImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12286B12244EF2F800833CFE /* UrlImage.swift */; };
@@ -52,7 +51,6 @@
 
 /* Begin PBXFileReference section */
 		12191A3F24543AA400C8C10C /* CountryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryError.swift; sourceTree = "<group>"; };
-		12286B0C244EE77000833CFE /* DataFilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFilteredList.swift; sourceTree = "<group>"; };
 		12286B0E244EE96200833CFE /* CountryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		12286B0F244EE96200833CFE /* CountryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		12286B12244EF2F800833CFE /* UrlImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImage.swift; sourceTree = "<group>"; };
@@ -228,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				1272B5EE244CEF4E005088EF /* ItemCountry.swift */,
-				12286B0C244EE77000833CFE /* DataFilteredList.swift */,
 				12286B12244EF2F800833CFE /* UrlImage.swift */,
 				12EDC8A4245064900032F84E /* Loader.swift */,
 			);
@@ -426,7 +423,6 @@
 				124665E22450DEAC00335CFC /* GetFavoritesUseCase.swift in Sources */,
 				1272B5E5244CE06C005088EF /* FavoritesView.swift in Sources */,
 				12D2DA50244F6F930075F077 /* GetCountriesUseCase.swift in Sources */,
-				12286B0D244EE77000833CFE /* DataFilteredList.swift in Sources */,
 				12D2DA4A244F6E640075F077 /* CountryRepository.swift in Sources */,
 				12E9D0412453602E008F230A /* GetCountryUseCase.swift in Sources */,
 				1272B5EF244CEF4E005088EF /* ItemCountry.swift in Sources */,
